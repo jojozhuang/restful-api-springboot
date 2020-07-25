@@ -43,9 +43,9 @@ Access http://localhost:8080/api/products in web browser or PostMan, you should 
 ```
 
 # Deploy to Heroku
-Follow tutorial [Deploying Spring Boot RESTful API to Heroku](https://jojozhuang.github.io/tutorial/restful/deploying-spring-boot-restful-api-to-heroku/) to deploy this Spring Boot app to [Heroku](https://www.heroku.com/).
+Follow tutorial [Deploying Spring Boot RESTful API to Heroku](https://jojozhuang.github.io/tutorial/deploying-spring-boot-restful-api-to-heroku) to deploy this Spring Boot app to [Heroku](https://www.heroku.com/).
 
-Follow tutorial [Continuously Deploy Spring Boot App to Heroku with Travis-CI](https://jojozhuang.github.io/tutorial/restful/continuously-deploy-spring-boot-app-to-heroku-with-travis-ci/) to continuously deploy this Spring Boot app to [Heroku](https://www.heroku.com/) with [Travis-CI](https://travis-ci.com/).
+Follow tutorial [Continuously Deploy Spring Boot App to Heroku with Travis-CI](https://jojozhuang.github.io/tutorial/continuously-deploy-spring-boot-app-to-heroku-with-travis-ci) to continuously deploy this Spring Boot app to [Heroku](https://www.heroku.com/) with [Travis-CI](https://travis-ci.com/).
 
 The available RESTful API on Heroku is
 * baseURL: https://gamestore-api.herokuapp.com/
@@ -53,7 +53,7 @@ The available RESTful API on Heroku is
 For example, request https://gamestore-api.herokuapp.com/api/products to get all products.
 
 # Portfolio
-Read portfolio [Game Store(Angular)](https://jojozhuang.github.io/portfolio/game-store-angular/) or [Game Store(React)](http://jojozhuang.github.io/portfolio/game-store-react/) to learn how these RESTful APIs are consumed by Angular and React applications.
+Read portfolio [Game Store(Angular)](https://jojozhuang.github.io/project/game-store-angular) or [Game Store(React)](http://jojozhuang.github.io/project/game-store-react) to learn how these RESTful APIs are consumed by Angular and React applications.
 
 # Tutorial
-Read tutorial [Building RESTful API with Spring Boot](https://jojozhuang.github.io/tutorial/restful/building-restful-api-with-spring-boot/) to learn how this RESTful API is built.
+Read tutorial [Building RESTful API with Spring Boot](https://jojozhuang.github.io/tutorial/building-restful-api-with-spring-boot) to learn how this RESTful API is built.
