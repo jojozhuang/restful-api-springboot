@@ -1,22 +1,12 @@
 package johnny.tutorial.restfulspringboot.controller;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import johnny.tutorial.restfulspringboot.domain.Product;
 import johnny.tutorial.restfulspringboot.repository.ProductRepository;
@@ -44,10 +34,11 @@ public class ProductController extends BaseController{
     // GET /products/5
     @GetMapping("/{id}")
     public ResponseEntity<Product> findOne(@PathVariable(value = "id") long id) {
-        Product product = productRepository.findOne(id);
-        if(product == null) {
+        Optional<Product> productOptional = productRepository.findById(id);
+        if(!productOptional.isPresent()) {
             return ResponseEntity.notFound().build();
         }
+        Product product = productOptional.get();
         product.setImage(getApiUrl() + product.getImage());
         return ResponseEntity.ok().body(product);
     }
@@ -64,10 +55,11 @@ public class ProductController extends BaseController{
     @PutMapping("/{id}")
     public ResponseEntity<Product> update(@PathVariable(value = "id") Long id, 
                                           @Valid @RequestBody Product product) {
-        Product oldProduct = productRepository.findOne(id);
-        if(oldProduct == null) {
+        Optional<Product> productOptional = productRepository.findById(id);
+        if(!productOptional.isPresent()) {
             return ResponseEntity.notFound().build();
         }
+        Product oldProduct = productOptional.get();
         oldProduct.setProductName(product.getProductName());
         oldProduct.setPrice(product.getPrice());
         oldProduct.setImage(product.getImage().replace(getApiUrl(), ""));
@@ -79,7 +71,8 @@ public class ProductController extends BaseController{
     // DELETE /products/5
     @DeleteMapping("/{id}")
     public ResponseEntity<Product> delete(@PathVariable(value = "id") long id) {
-        Product product = productRepository.findOne(id);
+        Optional<Product> productOptional = productRepository.findById(id);
+        Product product = productOptional.get();
         if(product == null) {
             return ResponseEntity.notFound().build();
         }

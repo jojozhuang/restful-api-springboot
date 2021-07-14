@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-import org.hibernate.validator.constraints.NotBlank;
+//import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
 public class Product {
@@ -12,7 +12,7 @@ public class Product {
     @GeneratedValue
     private Long id;
     
-    @NotBlank
+  //  @NotBlank
     private String productname;
     private double price;
     private String image;
